@@ -22,14 +22,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Build
-        run: |
-          npm install 
-          npx webpack --config webpack.prod.js && node sharp.js
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Upload Artifact
-        if: github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: "github-pages"
-          path: ./dist
+      - name: Build
+        run: npx webpack --config webpack.prod.js
+
+      - name: Run Tests
+        run: npm test
