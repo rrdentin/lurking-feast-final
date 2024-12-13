@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+a, button{
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+$navbar-background-color: #333;
+$navbar-link-color: white;
+$navbar-link-hover-color: #f1b84c;
+
+header {
+  background-color: $navbar-background-color;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  color: $navbar-link-color;
+  position: relative;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $navbar-link-color;
+}
+
+.navbar-logo {
+  width: 44px;
+  height: 44px;
+  margin-right: 0.5rem;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: $navbar-link-color;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+  color: $navbar-link-hover-color;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  flex-direction: column;
+  justify-content: space-around;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: $navbar-link-color;
+}
+
+.collapsible {
+  top: 0;
+  right: -12rem;
+  background-color: $navbar-background-color;
+  padding: 1rem;
+  border-radius: 0 0 5px 5px;
+  min-height: 100vh;
+  min-width: 12rem;
+  max-width: 100vw;
+  position: absolute;
+  visibility: hidden;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  font-size: 1.2rem;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+.collapsible.open {
+  transform: translateX(-12rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+  visibility: visible;
+  width: 12rem;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.overlay.show {
+  display: block;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: transparent;
+  color: $navbar-link-color;
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-inline-end: 0.5rem;
+  margin-block-start: 0.75rem;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+$main-font-size-h2: 2rem;
+$main-font-size-p: 1.2rem;
+
+#main {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-inline: 1rem;
+}
+
+#main h2 {
+  font-size: $main-font-size-h2;
+  text-align: center;
+  margin-bottom: 0.55rem;
+}
+
+#main > p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#main .not-found {
+  font-size: 4rem;
+  margin-top: 8rem;
+}
+
+#main .not-found-desc {
+  margin-bottom: 8rem;
+  font-size: 1.2rem;
+}
+
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: $navbar-background-color;
+  color: $navbar-link-color;
+}
+
+$card-background-color: #ffffff;
+$card-border-color: #ddd;
+$card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$card-visit-github-bg: #666;
+$card-visit-github-text-color: white;
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 445.33px));
+  gap: 1rem;
+}
+
+.card .visit-github {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  background-color: $card-visit-github-bg;
+  height: fit-content;
+  border-radius: 5px;
+  color: $card-visit-github-text-color;
+  height: 44px;
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.card .visit-github > i {
+  margin-right: 0.5rem;
+}
+
+.card {
+  background-color: $card-background-color;
+  border: 1px solid $card-border-color;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: $card-box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card-avatar {
+  max-width: 5rem;
+}
+
+$skip-to-content-bg: #1c1c1d;
+$skip-to-content-color: #fff;
+
+.skip-to-content {
+  position: absolute;
+  top: -45px;
+  left: 10px;
+  background: $skip-to-content-bg;
+  color: $skip-to-content-color;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+.loader {
+  display: 'none';
+  margin: 6rem auto;
+  width: 8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: $skip-to-content-bg #0000;
+  animation: l1 1s infinite;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-to-top:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 600px) {
+  #main .not-found {
+    font-size: 6rem;
+    margin-top: 8rem;
+  }
+
+  #main .not-found-desc {
+    margin-bottom: 8rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .lists {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 445.33px));
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .collapsible {
+    position: static;
+    display: block;
+    min-height: 0;
+    visibility: visible;
+  }
+
+  .close-button {
+    display: none;
+  }
+
+  .navbar-links {
+    flex-direction: row;
+    text-wrap: nowrap;
+    position: static;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  #main > h2 {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+  }
+
+  #main > p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,137 @@
+.detail {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: auto;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.restaurant-image {
+  flex-shrink: 0;
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+article > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+article h2 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+article p {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
+}
+
+article p b {
+  color: #000;
+}
+
+h2, h3, h4 {
+  color: #343a40;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-top: 15px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+b {
+  color: #495057;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+ul li {
+  background-color: #f1f3f5;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* Reviews Section */
+#reviewsContainer .review {
+  border-bottom: 1px solid #e9ecef;
+  padding: 10px 0;
+}
+
+#reviewsContainer .review:last-child {
+  border-bottom: none;
+}
+
+
+a, button{
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+[tabindex="0"]:focus {
+  outline: 2px solid #f08e4c;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  article, section {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+}

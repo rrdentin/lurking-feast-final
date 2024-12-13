@@ -1,0 +1,210 @@
+$primary-bg-color: #1c1c1d;
+$primary-text-color: #ffff;
+$secondary-text-color: #333333;
+$tertiary-text-color: #666;
+$overlay-bg-color: rgba(0, 0, 0, 0.5);
+$button-hover-color: #ddd;
+
+$font-size-small: 0.8rem;
+$font-size-medium: 1rem;
+$font-size-large: 1.2rem;
+$font-size-xlarge: 1.4rem;
+$font-size-xxlarge: 1.5rem;
+$font-size-xxxlarge: 2rem;
+$font-size-xxxxlarge: 2.4rem;
+$font-size-xxxxxlarge: 3rem;
+
+.jumbotron {
+    background-color: $primary-bg-color;
+    color: $primary-text-color !important;
+    height: 24rem;
+    min-width: 44px;
+    min-height: 44px;
+
+    h2 {
+        font-size: $font-size-xlarge;
+        color: $primary-text-color !important;
+        margin-bottom: 1rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    p {
+        font-size: $font-size-large;
+        margin-bottom: 1.5rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    >.container {
+        background-image: url("../public/images/heros/hero-image_4.jpg");
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 100%;
+        padding: 2rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        * {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+
+    .credit {
+        font-size: $font-size-small;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: $primary-text-color;
+        margin-left: 1rem;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.card-image {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+
+    .card:hover & {
+        transform: scale(1.01);
+    }
+}
+
+.restaurant-city-tag {
+    position: absolute;
+    top: 17rem;
+    right: 2rem;
+    background-color: #f0a500;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-size: 0.85rem;
+    z-index: 1;
+    min-width: 44px;
+    min-height: 44px;
+
+    .card:hover & {
+        background-color: #d88e00;
+    }
+}
+
+.restaurant-card-title {
+    font-size: $font-size-xxlarge;
+    margin-bottom: 0.5rem;
+    color: #f5893b;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.restaurant-card-description {
+    font-size: $font-size-medium;
+    margin-bottom: 1rem;
+    color: $tertiary-text-color;
+    text-align: justify;
+    transition: color 0.3s ease;
+    min-width: 44px;
+    min-height: 44px;
+
+    .card:hover & {
+        color: #555;
+    }
+}
+
+.restaurant-card-rating {
+    font-size: 1rem;
+    color: $secondary-text-color;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    b {
+        margin: 0;
+        line-height: 1;
+        display: inline;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+}
+a, button{
+    display: inline-block;
+    min-width: 44px;
+    min-height: 44px;
+}
+.restaurant-card-body {
+    display: flex;
+    align-items: start;
+    padding: 1rem;
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-left: 1rem;
+        align-items: start;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .jumbotron h2 {
+        font-size: $font-size-xxxxlarge;
+    }
+
+    .jumbotron p {
+        font-size: $font-size-xlarge;
+    }
+
+    .jumbotron .credit {
+        font-size: $font-size-medium;
+    }
+
+    .jumbotron {
+        height: 30rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .jumbotron h2 {
+        font-size: $font-size-xxxxxlarge;
+    }
+
+    .jumbotron p {
+        font-size: $font-size-xlarge;
+    }
+
+    .jumbotron .credit {
+        font-size: 1.2rem;
+    }
+}

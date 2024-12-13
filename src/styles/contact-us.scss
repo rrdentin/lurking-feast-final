@@ -1,0 +1,38 @@
+#contact-us {
+  padding: 2rem;
+  background-color: #f9f9f9;
+
+
+  .contact-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    .social-links {
+      margin-top: 2rem;
+      text-align: center;
+      min-width: 44px;
+      min-height: 44px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        display: inline-flex;
+        gap: 1rem;
+
+        li {
+          a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #f0a500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
