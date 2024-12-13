@@ -17,8 +17,6 @@ describe('Liking A Restaurant', () => {
   });
 
   it('should show the like button when the restaurant has not been liked before', async () => {
-    // document.body.innerHTML = '<div id="likeButton"></div>';
-
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
 
@@ -26,8 +24,6 @@ describe('Liking A Restaurant', () => {
   });
 
   it('should show the unlike button when the restaurant has been liked before', async () => {
-    // document.body.innerHTML = '<div id="likeButton"></div>';
-
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
 
@@ -35,8 +31,6 @@ describe('Liking A Restaurant', () => {
   });
 
   it('should be able to like the restaurant', async () => {
-    // document.body.innerHTML = '<div id="likeButton"></div>';
-
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));
@@ -46,8 +40,6 @@ describe('Liking A Restaurant', () => {
   });
 
   it('should not add a restaurant again when its already liked', async () => {
-    // document.body.innerHTML = '<div id="likeButton"></div>';
-
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
 
@@ -59,8 +51,6 @@ describe('Liking A Restaurant', () => {
   });
 
   it('should not add a restaurant when it has no id', async () => {
-    // document.body.innerHTML = '<div id="likeButton"></div>';
-
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButton'),
       restaurant: {},

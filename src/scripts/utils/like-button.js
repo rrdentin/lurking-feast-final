@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import FavoriteRestoIdb from '../data/FavoriteRestoIdb.js';
 import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/like-button.js';
 
@@ -6,7 +5,6 @@ const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._restaurant = restaurant;
-    // console.log('Initializing with restaurant:', restaurant);
 
     await this._renderButton();
   },
