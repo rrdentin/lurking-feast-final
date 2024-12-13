@@ -6,7 +6,7 @@ export const RestaurantCardTemplate = {
     restaurantCard.classList.add('card');
 
     restaurantCard.innerHTML = `
-        <img class="lazyload" src="${RestoRestAPI.getImageUrl(restaurant.pictureId, 'medium')}" 
+        <img class="lazyload" data-src="${RestoRestAPI.getImageUrl(restaurant.pictureId, 'medium')}" 
         alt="Image of ${restaurant.name}" class="card-image">
       <span class="restaurant-city-tag" 
             tabindex="0">${restaurant.city}</span>

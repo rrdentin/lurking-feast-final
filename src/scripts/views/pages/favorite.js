@@ -25,11 +25,16 @@ const Favorite = {
 
       const restaurants = await FavoriteRestoIdb.getAllRestos();
       const restaurantsContainer = document.querySelector('.lists');
-      restaurants.forEach((restaurant) => {
-        const restaurantCard = RestaurantCardTemplate.create(restaurant);
-        restaurantsContainer.appendChild(restaurantCard);
-
-      });
+      if (restaurants.length > 0) {
+        restaurants.forEach((restaurant) => {
+          const restaurantCard = RestaurantCardTemplate.create(restaurant);
+          restaurantsContainer.appendChild(restaurantCard);
+        });
+      } else {
+        restaurantsContainer.innerHTML = `
+          <p tabindex="0">No Favorite Resto</p>
+        `;
+      }
     } catch (e) {
       document.querySelector('.lists').innerHTML = `
         <p tabindex="0">Failed to load restaurants. Please try again later.</p>

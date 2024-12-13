@@ -63,7 +63,7 @@ module.exports = {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
-            ignore: ['**/images/icons/**'], // Ignore icons as they'll be handled by pwa-manifest
+            ignore: ['**/images/**'],
           },
         },
       ],
@@ -105,9 +105,6 @@ module.exports = {
         },
       ],
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-    }),
     new ImageminWebpackPlugin({
       plugins: [
         imageminMozjpeg({
@@ -115,6 +112,9 @@ module.exports = {
           progressive: true,
         })
       ]
-    })
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+    }),
   ],
 };

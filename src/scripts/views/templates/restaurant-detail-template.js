@@ -15,7 +15,7 @@ export const createRestaurantDetailTemplate = (restaurant, isLiked) => {
   <article>
   <img
     class="restaurant-image lazyload"
-    src="${RestoRestAPI.getImageUrl(restaurant.pictureId)}"
+    data-src="${RestoRestAPI.getImageUrl(restaurant.pictureId)}"
     alt="Image of ${restaurant.name}"
     tabindex="0"
   />
