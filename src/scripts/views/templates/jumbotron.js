@@ -5,19 +5,17 @@ export const Jumbotron = {
 
     const divElement = document.createElement('div');
     divElement.classList.add('container');
-    divElement.style.position = 'relative'; // Ensure the container is positioned relative for layering
-
+    divElement.style.position = 'relative';
     const picture = document.createElement('picture');
-    picture.style.position = 'absolute'; // Position the picture to cover the container
+    picture.style.position = 'absolute';
     picture.style.top = '0';
     picture.style.left = '0';
     picture.style.width = '100%';
     picture.style.height = '100%';
-    picture.style.objectFit = 'cover'; // Ensure the image covers the container
-    picture.style.zIndex = '0'; // Place the picture below content
-    picture.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Add overlay effect
+    picture.style.objectFit = 'cover';
+    picture.style.zIndex = '0';
+    picture.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
-    // Source for small screens
     const sourceSmall = document.createElement('source');
     sourceSmall.setAttribute('media', '(max-width: 599px)');
     sourceSmall.setAttribute('srcset', '/images/hero-image_4-small.jpg');
@@ -34,7 +32,6 @@ export const Jumbotron = {
     img.style.height = '100%';
     img.style.objectFit = 'cover';
 
-    // Append sources and img to the picture element
     picture.appendChild(sourceSmall);
     picture.appendChild(sourceLarge);
     picture.appendChild(img);
