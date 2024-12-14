@@ -9,6 +9,10 @@ async function addToFavorite(I) {
   I.seeElement('.card');
   I.click(locate('.card a').first());
 
+  I.waitForElement('#restaurant-detail div h2', 15);
+  I.seeElement('#restaurant-detail div h2');
+  const restoName = await I.grabTextFrom('#restaurant-detail div h2');
+
   I.waitForElement('#likeButton', 15);
   I.seeElement('#likeButton');
   const likeButtonText = await I.grabTextFrom('#likeButton');
@@ -18,11 +22,18 @@ async function addToFavorite(I) {
   assert.equal(likeButtonTextAfterLike.includes('Unlike this resto'), true);
   I.amOnPage('/#/favorite');
 
-  I.waitForElement('.card', 15);
-  I.seeElement('.card');
+  I.waitForElement('.restaurant-card-title a', 10); // Adjust timeout to 10 seconds
+  I.seeElement('.restaurant-card-title a');
+
+  const likedRestoName = await I.grabTextFrom('.restaurant-card-title a');
+  const cleanRestoName = likedRestoName.trim();
+  assert.strictEqual(restoName, cleanRestoName);
+
 }
 
 async function removeFromFavorite(I) {
+  I.waitForElement('.card', 15);
+  I.seeElement('.card');
   I.click(locate('.card a').first());
 
   I.waitForElement('#likeButton', 5);
